@@ -2,3 +2,5 @@
 %p= @user.email
 
 = gravatar_for @user
+
+= link_to "Sign out", signout_path, method: "delete"
