@@ -31,6 +31,8 @@ gem 'thin'
 
 gem 'haml-rails'
 
+gem 'bcrypt-ruby', '3.1.2'
+
 group :doc do
   # bundle exec rake doc:rails generates the API under doc/api.
   gem 'sdoc', require: false
