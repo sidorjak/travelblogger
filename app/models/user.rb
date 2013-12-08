@@ -1,7 +1,9 @@
 class User < ActiveRecord::Base
-  has_secure_password
   before_save { email.downcase! }
   before_create :create_remember_token
+  
+  has_many :posts, dependent: :destroy
+  has_secure_password
   
   validates :name,  presence: true  
   VALID_EMAIL_REGEX = /\A[\w+\-.]+@[a-z\d\-]+(\.[a-z]+)*\.[a-z]+\z/i

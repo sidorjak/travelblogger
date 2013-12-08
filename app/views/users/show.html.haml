@@ -4,3 +4,8 @@
 = gravatar_for @user
 
 = link_to "Sign out", signout_path, method: "delete"
+
+- if @user.posts.any?
+  %h3
+    Posts (#{@user.posts.count})
+  %ol.posts= render @posts
